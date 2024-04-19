@@ -1,13 +1,28 @@
 <?php get_header(); ?>
+
 	<div>
 		<?php if ( have_posts() ) : ?>
 			<?php while ( have_posts() ) : ?>
 				<?php the_post(); ?>
+
+				<div class="narrow-container">
+					<pre>
+
+					<?php
+					$next_posts = thm_get_adjacent_posts(get_post(), true, 3);
+					$next_posts[0]->post_content = '';
+					print_r($next_posts);
+					?>
+					</pre>
+				</div>
+
 				<?php get_template_part( 'template-parts/content', 'single' ); ?>
 				<div class="flex flex-row items-center justify-between mx-auto max-w-2xl w-full px-8 text-lg mt-16">
 					<div class=""><?php previous_post_link( '← %link' ); ?></div>
 					<div class=""><?php next_post_link( '%link →' ); ?></div>
 				</div>
+
+
 
 				<div class="narrow-container">
 
