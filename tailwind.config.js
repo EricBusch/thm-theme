@@ -26,15 +26,18 @@ module.exports = {
                 'serif': ['"Cardo"', ...defaultTheme.fontFamily.serif],
                 'zh': ['"Liu Jian Mao Cao"', ...defaultTheme.fontFamily.serif]
             },
+            // screens: {
+            //     'sm': '672px',
+            // }
         },
-        screens: {
-            'xs': '480px',
-            'sm': '600px',
-            'md': '782px',
-            'lg': tailpress.theme('settings.layout.contentSize', theme),
-            'xl': tailpress.theme('settings.layout.wideSize', theme),
-            '2xl': '1440px'
-        }
+        // screens: {
+        //     'xs': '480px',
+        //     'sm': '576px',
+        //     'md': '782px',
+        //     'lg': tailpress.theme('settings.layout.contentSize', theme),
+        //     'xl': tailpress.theme('settings.layout.wideSize', theme),
+        //     '2xl': '1440px'
+        // }
     },
     plugins: [
         tailpress.tailwind,

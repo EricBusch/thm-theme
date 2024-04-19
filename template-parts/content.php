@@ -14,38 +14,41 @@
 
 	<?php else : ?>
 
-		<div class="max-w-xl mx-auto">
-			<a href="<?php echo esc_url( get_permalink() ); ?>" title="Visit post page">
-				<time datetime="<?php echo get_the_date( 'c' ); ?>"
-				      itemprop="datePublished"
-				      class="text-sm font-bold text-gray-700">
-					<?php echo get_the_date(); ?>
-				</time>
-			</a>
+		<div class="">
+
+			<div class="narrow-container mb-5">
+				<a href="<?php echo esc_url( get_permalink() ); ?>" title="Visit post">
+					<time datetime="<?php echo get_the_date( 'c' ); ?>"
+					      itemprop="datePublished"
+					      class="text-base font-bold text-gray-700">
+						<?php echo get_the_date(); ?>
+					</time>
+				</a>
+			</div>
+
+			<div class="entry-content narrow-container thm-prose">
+				<?php
+				the_content(
+					sprintf(
+						__( 'Continue reading %s', 'tailpress' ),
+						the_title( '<span class="screen-reader-text">"', '"</span>', false )
+					)
+				);
+
+				wp_link_pages(
+					array(
+						'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'tailpress' ) . '</span>',
+						'after'       => '</div>',
+						'link_before' => '<span>',
+						'link_after'  => '</span>',
+						'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'tailpress' ) . ' </span>%',
+						'separator'   => '<span class="screen-reader-text">, </span>',
+					)
+				);
+				?>
+			</div>
+
 		</div>
-
-		<div class="entry-content thm-prose -mt-4">
-			<?php
-			the_content(
-				sprintf(
-					__( 'Continue reading %s', 'tailpress' ),
-					the_title( '<span class="screen-reader-text">"', '"</span>', false )
-				)
-			);
-
-			wp_link_pages(
-				array(
-					'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'tailpress' ) . '</span>',
-					'after'       => '</div>',
-					'link_before' => '<span>',
-					'link_after'  => '</span>',
-					'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'tailpress' ) . ' </span>%',
-					'separator'   => '<span class="screen-reader-text">, </span>',
-				)
-			);
-			?>
-		</div>
-
 	<?php endif; ?>
 
 </article>

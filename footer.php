@@ -6,7 +6,7 @@
 
 <?php do_action( 'tailpress_content_after' ); ?>
 
-<footer id="colophon" class="site-footer py-16" role="contentinfo">
+<footer id="colophon" class="site-footer pt-16 pb-8 md:pb-10" role="contentinfo">
 	<?php do_action( 'tailpress_footer' ); ?>
 
 	<div class="flex flex-col items-center">

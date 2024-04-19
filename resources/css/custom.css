@@ -1,18 +1,34 @@
-.thm-prose {
-    @apply mx-auto;
+.narrow-container {
+    @apply px-6 sm:px-8;
     @apply max-w-xl;
+    @apply mx-auto;
+}
 
-    @apply prose-2xl;
+.thm-prose {
 
-    @apply prose-p:text-xl;
-    @apply prose-p:text-primary-900;
-    @apply prose-p:text-justify;
+    /**
+     * Narrower than "sm" breakpoint (640px wide)
+     */
+    @apply prose-p:mt-0; /* Remove margin from top of paragraphs */
+    @apply prose-p:mb-6; /* Add margin of "6" to bottom of paragraphs */
+    @apply prose-p:text-lg; /* Set font size to "lg" */
+    @apply prose-p:leading-relaxed; /* Set line spacing to "relaxed" */
+    @apply prose-p:text-primary-900; /* Set font color to 900 */
+    @apply prose-p:text-justify; /* Justify paragraph text */
+    @apply prose-figure:mt-0; /* Remove margin from top of figure elements */
+    @apply prose-figure:mb-6; /* Add margin of "6" to bottom of figure elements */
+    @apply prose-figure:-mx-6; /* Offset figure element by "6" (same as the .narrow-container padding) */
+    @apply prose-img:my-0; /* Remove vertical margin from images */
 
-    @apply prose-figure:md:-mx-12;
-
-    @apply prose-img:my-0;
-    @apply prose-img:shadow-md;
-    @apply prose-img:rounded-2xl;
+    /**
+     * Wider than "sm" breakpoint (640px wide)
+     */
+    @apply prose-p:sm:mb-8; /* Add margin of "8" to bottom of paragraphs */
+    @apply prose-p:sm:text-xl; /* Set font size to "xl" */
+    @apply prose-figure:sm:mb-8; /* Add margin of "8" to bottom of figure elements */
+    @apply prose-figure:sm:-mx-8; /* Offset figure element by "8" (same as the .narrow-container padding) */
+    @apply prose-img:sm:shadow-md; /* Add shadow to image */
+    @apply prose-img:sm:rounded-2xl; /* Add rounded corners to image */
 }
 
 /* Show different cursor when hovering over an image in prose */
@@ -52,5 +68,5 @@
     /*max-height: 1024px !important;*/
     object-fit: contain;
     filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
-    border-radius: 1rem;
+    /*border-radius: 1rem;*/
 }
