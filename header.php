@@ -11,6 +11,13 @@
 	<link
 		href="https://fonts.googleapis.com/css2?family=Cardo:ital,wght@0,400;0,700;1,400&family=Liu+Jian+Mao+Cao&display=swap"
 		rel="stylesheet">
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="#5bbad5">
+	<meta name="msapplication-TileColor" content="#d3d1ce">
+	<meta name="theme-color" content="#d3d1ce">
 </head>
 
 <body <?php body_class( 'bg-primary-200 text-primary-800 font-serif antialiased' ); ?>>
