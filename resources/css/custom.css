@@ -43,8 +43,9 @@
 }
 
 .fslightbox-source {
-    max-width: 1024px !important;
-    max-height: 1024px !important;
+    /*max-width: 1024px !important;*/
+    /*max-height: 1024px !important;*/
     object-fit: contain;
     filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+    border-radius: 1rem;
 }

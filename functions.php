@@ -109,7 +109,7 @@ function tailpress_nav_menu_add_submenu_class( $classes, $args, $depth ) {
 add_filter( 'nav_menu_submenu_css_class', 'tailpress_nav_menu_add_submenu_class', 10, 3 );
 
 add_action( 'wp_enqueue_scripts', function () {
-	$version = '1.0.2';
+	$version = '1.0.5';
 	wp_enqueue_script( 'fslb-js', get_template_directory_uri() . '/js/fslightbox/fslightbox.js', [], $version, true );
 	wp_enqueue_script( 'fslb-js-custom', get_template_directory_uri() . '/js/fslightbox/custom.js', [ 'fslb-js' ], $version, true );
 } );
