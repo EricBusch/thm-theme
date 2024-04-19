@@ -14,3 +14,37 @@
     @apply prose-img:shadow-md;
     @apply prose-img:rounded-2xl;
 }
+
+/**
+ * LIGHTBOX OVERRIDES
+ */
+.fslightbox-container {
+    background: #fff !important;
+}
+
+.fslightbox-slide-btn {
+    background: transparent !important;
+}
+
+.fslightbox-svg-path {
+    fill: #94a3b8 !important;
+}
+
+.fslightbox-slide-number-container {
+    color: #94a3b8 !important;
+}
+
+.fslightbox-toolbar {
+    background: transparent !important;
+}
+
+.fslightbox-slash {
+    background: #94a3b8 !important;
+}
+
+.fslightbox-source {
+    max-width: 1024px !important;
+    max-height: 1024px !important;
+    object-fit: contain;
+    filter: drop-shadow(0 1px 2px rgb(0 0 0 / 0.1)) drop-shadow(0 1px 1px rgb(0 0 0 / 0.06));
+}
