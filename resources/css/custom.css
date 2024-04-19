@@ -15,6 +15,11 @@
     @apply prose-img:rounded-2xl;
 }
 
+/* Show different cursor when hovering over an image in prose */
+.thm-prose > figure > a[data-fslightbox="lb"] {
+    @apply cursor-zoom-in;
+}
+
 /**
  * LIGHTBOX OVERRIDES
  */
