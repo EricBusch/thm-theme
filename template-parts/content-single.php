@@ -1,6 +1,5 @@
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-
 	<header class="entry-header bg-primary-700 w-full relative flex flex-col items-center justify-center mb-12">
 		<?php echo wp_get_attachment_image( get_post_thumbnail_id(), 'large', false, [
 			'class' => 'object-cover w-full h-[50vh] mix-blend-multiply',
@@ -16,22 +15,8 @@
 		</div>
 	</header>
 
-	<div
-		class="entry-content thm-prose">
+	<div class="entry-content thm-prose px-8">
 		<?php the_content(); ?>
-
-		<?php
-		wp_link_pages(
-			array(
-				'before'      => '<div class="page-links"><span class="page-links-title">' . __( 'Pages:', 'tailpress' ) . '</span>',
-				'after'       => '</div>',
-				'link_before' => '<span>',
-				'link_after'  => '</span>',
-				'pagelink'    => '<span class="screen-reader-text">' . __( 'Page', 'tailpress' ) . ' </span>%',
-				'separator'   => '<span class="screen-reader-text">, </span>',
-			)
-		);
-		?>
 	</div>
 
 </article>
