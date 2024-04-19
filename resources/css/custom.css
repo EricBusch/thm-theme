@@ -1,0 +1,16 @@
+.thm-prose {
+    @apply mx-auto;
+    @apply max-w-xl;
+
+    @apply prose-2xl;
+
+    @apply prose-p:text-xl;
+    @apply prose-p:text-primary-900;
+    @apply prose-p:text-justify;
+
+    @apply prose-figure:md:-mx-12;
+
+    @apply prose-img:my-0;
+    @apply prose-img:shadow-md;
+    @apply prose-img:rounded-2xl;
+}
