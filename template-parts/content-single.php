@@ -15,7 +15,7 @@
 		</div>
 	</header>
 
-	<div class="entry-content thm-prose px-8">
+	<div class="entry-content thm-prose">
 		<?php the_content(); ?>
 	</div>
 
