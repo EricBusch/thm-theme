@@ -88,7 +88,7 @@ add_filter( 'nav_menu_css_class', 'tailpress_nav_menu_add_li_class', 10, 4 );
 /**
  * Adds option 'submenu_class' to 'wp_nav_menu'.
  *
- * @param string $classes String of classes.
+ * @param string[] $classes Array of the CSS classes that are applied to the menu `<ul>` element.
  * @param mixed $item The current item.
  * @param WP_Term $args Holds the nav menu arguments.
  *
@@ -115,7 +115,7 @@ add_action( 'wp_enqueue_scripts', function () {
 } );
 
 /**
- * Return an array of WP_Post objects for post_type 'collection'.
+ * Return an array of WP_Post objects for which are adjacent to the "current" $post.
  *
  * @param WP_Post|int $post
  * @param int $limit
@@ -133,28 +133,28 @@ function thm_get_adjacent_posts( WP_Post|int $post = 0, int $limit = 1, array $o
 
 	$post->is_current = true;
 
-	$prev_posts = thm_get_prev_posts( $post, $limit, $overrides );
+	$prev_posts = array_reverse( thm_get_prev_posts( $post, $limit, $overrides ) );
 	$next_posts = thm_get_next_posts( $post, $limit, $overrides );
 
 	$posts = [];
 
 	foreach ( $prev_posts as $prev_post ) {
 		$prev_post->is_current = false;
-		$posts[] = $prev_post;
+		$posts[]               = $prev_post;
 	}
 
 	$posts[] = $post;
 
 	foreach ( $next_posts as $next_post ) {
 		$next_post->is_current = false;
-		$posts[] = $next_post;
+		$posts[]               = $next_post;
 	}
 
 	return $posts;
 }
 
 /**
- * Get the previous X number of posts in relation to the current $post.
+ * Get the previous X number of posts in relation to the "current" $post.
  *
  * @param int|WP_Post $post Optional. Post ID or WP_Post object. Default is global $post.
  * @param int $limit Maximum number of posts to return.
@@ -170,7 +170,7 @@ function thm_get_prev_posts( WP_Post|int $post = 0, int $limit = 1, array $overr
 		return [];
 	}
 
-	$posts = get_posts( [
+	return get_posts( [
 		'post_type'        => 'post',
 		'suppress_filters' => true,
 		'orderby'          => $overrides['orderby'] ?? 'date',
@@ -179,16 +179,10 @@ function thm_get_prev_posts( WP_Post|int $post = 0, int $limit = 1, array $overr
 		'post_status'      => $overrides['post_status'] ?? ( is_user_logged_in() ? 'any' : 'publish' ),
 		'date_query'       => [ 'before' => $post->post_date ],
 	] );
-
-
-
-//	var_dump($posts);
-
-	return array_reverse($posts);
 }
 
 /**
- * Get the next X number of posts in relation to the current $post.
+ * Get the next X number of posts in relation to the "current" $post.
  *
  * @param int|WP_Post $post Optional. Post ID or WP_Post object. Default is global $post.
  * @param int $limit Maximum number of posts to return.
