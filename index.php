@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-	<div class="mx-auto mt-12 mb-8">
+	<div class="mx-auto mt-12 mb-8 pb-16">
 		<?php if ( have_posts() ) : ?>
 			<?php while ( have_posts() ) : ?>
 				<?php the_post(); ?>
