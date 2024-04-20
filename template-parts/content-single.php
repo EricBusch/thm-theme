@@ -7,11 +7,6 @@
 		] ); ?>
 		<div class="absolute flex flex-col">
 			<?php the_title( sprintf( '<h1 class="entry-title text-4xl leading-tight mb-1 text-primary-50 text-balance max-w-xl text-center px-8"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h1>' ); ?>
-			<time datetime="<?php echo get_the_date( 'c' ); ?>"
-			      itemprop="datePublished"
-			      class="text-sm text-primary-100 text-center">
-				<?php echo get_the_date(); ?>
-			</time>
 		</div>
 	</header>
 

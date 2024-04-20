@@ -57,7 +57,7 @@
 <?php if ( ( $wp_query->current_post + 1 !== $wp_query->post_count ) ) : ?>
 	<div class="flex flex-row items-center justify-center my-12 max-w-xl mx-auto space-x-4 px-8 cursor-default">
 		<div class="h-0.5 bg-gradient-to-l from-primary-300 to-primary-200 w-full rounded-full"></div>
-		<p class="font-zh text-4xl text-primary-400">山</p>
+		<p class="font-zh text-4xl text-primary-500">山</p>
 		<div class="h-0.5 bg-gradient-to-r from-primary-300 to-primary-200 w-full rounded-full"></div>
 	</div>
 <?php endif; ?>
